@@ -13,16 +13,23 @@
 		<title>Wormhole Template App</title>
 		<link rel="stylesheet" href="style.css" type="text/css" media="screen" title="no title" charset="utf-8">
 		<script type="text/javascript" charset="utf-8" src="js/wormhole.js"></script>
-		<script type="text/javascript" charset="utf-8" src="jquery-1.8.0.js"></script>
+		<script type="text/javascript" charset="utf-8" src="js/jquery-1.8.0.js"></script>
 		<script type="text/javascript">
 			/**
 			 * Displays the device information on the screen.
 			 */
-			 function newFunc()
-			 {
-				$("#textBox").text("Hello");
-			 }
-			 
+			function newFunc()
+			{
+				jQuery.ajax({
+	   					type: "POST",
+	   					url: "http://zenmansoftware.com/shoe/browsestyle.php",
+	   					data: "brand=" + $("#brand").val(),
+	   					cache: false,
+	   					success: function(response){
+							$("#textBox").text(response);
+	    				}	
+					});
+			}
 			 
 			function displayDeviceInfo()
 			{
@@ -96,16 +103,9 @@
 	<body>
 		<div id="screen">
 			<div class="pane" id="heading">Customized Wormhole Technology Biatch</div>
-			<div class="pane" id="info">
-				<div class="infoItem">Platform: <span id="platform">&nbsp;</span></div>
-				<div class="infoItem">Version: <span id="version">&nbsp;</span></div>
-				<div class="infoItem">UUID: <span id="uuid">&nbsp;</span></div>
-				<div class="infoItem">Name: <span id="name">&nbsp;</span></div>
-				<div class="infoItem">Width: <span id="width">&nbsp;</span></div>
-				<div class="infoItem">Height: <span id="height">&nbsp;</span></div>
-			</div>
+			<input id="brand"></input>
 			<div class="pane button" onclick="newFunc()">Click</div>
-			<div class="pane button" onclick="beep()">Beep</div>
+			<div class="pane button" onclick="browseBrands()">Beep</div>
 			<div class="pane button" onclick="changeColor()">Change Color</div>
 			<div id="textBox"></div>
 		</div>

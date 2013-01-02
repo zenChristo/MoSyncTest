@@ -86,3 +86,25 @@ org.osgi.service.prefs.BackingStoreException: Exception saving preferences to: /
 
 !ENTRY org.eclipse.cdt.core 1 0 2013-01-02 18:59:14.591
 !MESSAGE Indexed 'Test' (1 sources, 61 headers) in 3.27 sec: 3,925 declarations; 3,957 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0.00%)
+
+!ENTRY org.eclipse.ui.workbench 2 0 2013-01-02 19:14:52.926
+!MESSAGE A handler conflict occurred.  This may disable some commands.
+!SUBENTRY 1 org.eclipse.ui.workbench 2 0 2013-01-02 19:14:52.926
+!MESSAGE Conflict for 'com.mobilesorcery.sdk.more.launchShortcut.run':
+HandlerActivation(commandId=com.mobilesorcery.sdk.more.launchShortcut.run,
+	handler=org.eclipse.debug.internal.ui.launchConfigurations.LaunchShortcutExtension$LaunchCommandHandler@34d86395,
+	expression=,sourcePriority=0)
+HandlerActivation(commandId=com.mobilesorcery.sdk.more.launchShortcut.run,
+	handler=org.eclipse.debug.internal.ui.launchConfigurations.LaunchShortcutExtension$LaunchCommandHandler@6a71e64d,
+	expression=,sourcePriority=0)
+
+!ENTRY org.eclipse.ui.workbench 2 0 2013-01-02 19:14:52.926
+!MESSAGE A handler conflict occurred.  This may disable some commands.
+!SUBENTRY 1 org.eclipse.ui.workbench 2 0 2013-01-02 19:14:52.926
+!MESSAGE Conflict for 'com.mobilesorcery.sdk.more.launchShortcut.debug':
+HandlerActivation(commandId=com.mobilesorcery.sdk.more.launchShortcut.debug,
+	handler=org.eclipse.debug.internal.ui.launchConfigurations.LaunchShortcutExtension$LaunchCommandHandler@12c11e94,
+	expression=,sourcePriority=0)
+HandlerActivation(commandId=com.mobilesorcery.sdk.more.launchShortcut.debug,
+	handler=org.eclipse.debug.internal.ui.launchConfigurations.LaunchShortcutExtension$LaunchCommandHandler@44be902a,
+	expression=,sourcePriority=0)
